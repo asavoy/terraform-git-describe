@@ -9,5 +9,5 @@ module "git_describe" {
 }
 
 output "description" {
-  value = "${module.git_describe.description}"
+  value = module.git_describe.description
 }

@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 0.11"
+  required_version = "~> 0.12.0"
 }
 
 data "external" "git_describe" {
@@ -7,5 +7,5 @@ data "external" "git_describe" {
 }
 
 output "description" {
-  value = "${lookup(data.external.git_describe.result, "description")}"
+  value = data.external.git_describe.result["description"]
 }
